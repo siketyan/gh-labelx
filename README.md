@@ -12,7 +12,7 @@ Creates issue labels on GitHub idempotently through HashiCorp Terraform.
 
 ## Getting started
 ```shell
-cargo install gh-labelx
+gh extension install siketyan/gh-labelx
 ```
 
 ## Usages
