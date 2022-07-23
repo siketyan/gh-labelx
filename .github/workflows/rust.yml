@@ -71,6 +71,7 @@ jobs:
           - target: x86_64-unknown-linux-gnu
             artifact: gh-labelx
             name: gh-labelx-linux-amd64
+            publish: true
     steps:
       - uses: actions/checkout@v3
 
@@ -90,12 +91,14 @@ jobs:
           target: ${{ matrix.target }}
 
       - name: Log into crates.io
+        if: ${{ github.event_name == 'release' && matrix.publish }}
         uses: actions-rs/cargo@v1
         with:
           command: login
           args: ${{ secrets.CRATES_IO_TOKEN }}
 
       - name: Publish to crates.io
+        if: ${{ github.event_name == 'release' && matrix.publish }}
         uses: actions-rs/cargo@v1
         with:
           command: publish
