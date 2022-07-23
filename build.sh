@@ -3,4 +3,4 @@
 set -eu
 cargo build --release --target "$TARGET"
 mkdir -p "./dist/"
-cp "./target/$TARGET/$ARTIFACT" "./dist/$NAME"
+cp "./target/$TARGET/release/$ARTIFACT" "./dist/$NAME"
