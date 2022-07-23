@@ -57,15 +57,15 @@ jobs:
     strategy:
       matrix:
         target:
-          - x86_64-pc-windows-msvc
+#          - x86_64-pc-windows-msvc
           - x86_64-apple-darwin
           - aarch64-apple-darwin
           - x86_64-unknown-linux-gnu
         include:
-          - target: x86_64-pc-windows-msvc
-            runner: windows-2022
-            artifact: gh-labelx.exe
-            name: gh-labelx-windows-amd64.exe
+#          - target: x86_64-pc-windows-msvc
+#            runner: windows-2022
+#            artifact: gh-labelx.exe
+#            name: gh-labelx-windows-amd64.exe
           - target: x86_64-apple-darwin
             runner: macos-12
             artifact: gh-labelx
