@@ -15,12 +15,14 @@ use crate::terraform::Terraform;
 
 #[derive(Debug, clap::Parser)]
 struct ManifestArgs {
+    /// Path to the manifest file.
     #[clap(short, long)]
     file: PathBuf,
 }
 
 #[derive(Debug, clap::Subcommand)]
 enum Action {
+    /// Dumps the generated Terraform file to stdout or the file.
     Dump {
         #[clap(flatten)]
         manifest: ManifestArgs,
@@ -28,10 +30,12 @@ enum Action {
         #[clap(long)]
         output: Option<PathBuf>,
     },
+    /// Plans your changes to the labels.
     Plan {
         #[clap(flatten)]
         manifest: ManifestArgs,
     },
+    /// Applies the manifest to labels on GitHub.
     Apply {
         #[clap(flatten)]
         manifest: ManifestArgs,
@@ -44,12 +48,15 @@ struct Cli {
     #[clap(subcommand)]
     action: Action,
 
+    /// Hostname of GitHub Enterprise Server.
     #[clap(short, long)]
     host: Option<String>,
 
+    /// Repository owner or organisation.
     #[clap(short, long)]
     owner: String,
 
+    /// Repository name.
     #[clap(short, long)]
     repo: String,
 }
