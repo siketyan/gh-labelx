@@ -110,7 +110,6 @@ jobs:
 
       - uses: cli/gh-extension-precompile@v1
         env:
-          GITHUB_REF: 'refs/tags/v0.1.0'
           TARGET: ${{ matrix.target }}
           ARTIFACT: ${{ matrix.artifact }}
           NAME: ${{ matrix.name }}
