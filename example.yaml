@@ -1,0 +1,8 @@
+---
+labels:
+  - name: feature
+    color: '0000FF'
+  - name: fix
+    color: 'FF0000'
+  - name: refactor
+    color: '00FF00'

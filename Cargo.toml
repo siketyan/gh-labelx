@@ -1,0 +1,26 @@
+[package]
+name = "gh-labelx"
+description = "Creates issue labels on GitHub idempotently through HashiCorp Terraform."
+version = "0.1.0"
+license = "MIT"
+homepage = "https://github.com/siketyan/gh-labelx"
+repository = "https://github.com/siketyan/gh-labelx.git"
+readme = "README.md"
+edition = "2021"
+authors = [
+    # Thank you for your contribution!
+    # While contributing to this project, feel free to add your name here :)
+    "Naoki Ikeguchi <me@s6n.jp>",
+]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "3.2", features = ["derive"] }
+hcl-rs = "0.6"
+gh-config = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
+tempdir = "0.3"
+uuid = { version = "1.1", features = ["v4"] }
