@@ -47,10 +47,35 @@ jobs:
           command: test
 
   deploy:
-    runs-on: ubuntu-22.04
     if: ${{ github.event_name == 'release' }}
     needs:
       - checks
+    strategy:
+      matrix:
+        target:
+#          - x86_64-pc-windows-msvc
+          - x86_64-apple-darwin
+          - aarch64-apple-darwin
+          - x86_64-unknown-linux-gnu
+        include:
+#          - target: x86_64-pc-windows-msvc
+#            runner: windows-2022
+#            artifact: gh-labelx.exe
+#            name: gh-labelx-windows-amd64.exe
+          - target: x86_64-apple-darwin
+            runner: macos-12
+            artifact: gh-labelx
+            name: gh-labelx-darwin-amd64
+          - target: aarch64-apple-darwin
+            runner: macos-12
+            artifact: gh-labelx
+            name: gh-labelx-darwin-arm64
+          - target: x86_64-unknown-linux-gnu
+            runner: ubuntu-22.04
+            artifact: gh-labelx
+            name: gh-labelx-linux-amd64
+            publish: true
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v3
 
@@ -67,15 +92,26 @@ jobs:
         with:
           toolchain: stable
           override: true
+          target: ${{ matrix.target }}
 
       - name: Log into crates.io
+        if: ${{ matrix.publish }}
         uses: actions-rs/cargo@v1
         with:
           command: login
           args: ${{ secrets.CRATES_IO_TOKEN }}
 
       - name: Publish to crates.io
+        if: ${{ matrix.publish }}
         uses: actions-rs/cargo@v1
         with:
           command: publish
           args: --allow-dirty
+
+      - uses: cli/gh-extension-precompile@v1
+        env:
+          TARGET: ${{ matrix.target }}
+          ARTIFACT: ${{ matrix.artifact }}
+          NAME: ${{ matrix.name }}
+        with:
+          build_script_override: "build.sh"
