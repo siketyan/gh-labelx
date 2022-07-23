@@ -10,6 +10,17 @@ Creates issue labels on GitHub idempotently through HashiCorp Terraform.
 - **Simple**: Just write a simple YAML manifest to create many labels at once.
 - **Extensible**: Requests to GitHub are powered by Terraform. You can customise additional labels or properties using hooks after generation.
 
+## Prerequisites
+gh-labelx requires HashiCorp Terraform.
+On macOS, you can install them via Homebrew:
+
+```shell
+brew install terraform
+```
+
+For other platforms, refer the official documentation:
+https://www.terraform.io/downloads
+
 ## Getting started
 ```shell
 gh extension install siketyan/gh-labelx
