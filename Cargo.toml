@@ -19,7 +19,7 @@ authors = [
 anyhow = "1.0"
 clap = { version = "3.2", features = ["derive"] }
 hcl-rs = "0.6"
-gh-config = "0.1"
+gh-config = "0.2"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.8"
 tempdir = "0.3"
