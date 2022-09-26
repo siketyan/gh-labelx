@@ -172,13 +172,13 @@ dependencies = [
 
 [[package]]
 name = "gh-config"
-version = "0.1.1"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c86d1ee32aff1b895fd064867c1b3d3897c7946b685c36976f411881407c6d71"
+checksum = "95d3f5016c6706e2d501eeb52d41f1865bb3e179b138366f20f979dfdd69e822"
 dependencies = [
  "dirs",
  "serde",
- "serde_yaml",
+ "serde_yaml 0.9.13",
  "thiserror",
 ]
 
@@ -191,7 +191,7 @@ dependencies = [
  "gh-config",
  "hcl-rs",
  "serde",
- "serde_yaml",
+ "serde_yaml 0.8.26",
  "tempdir",
  "uuid",
 ]
@@ -475,6 +475,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde_yaml"
+version = "0.9.13"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8613d593412a0deb7bbd8de9d908efff5a0cb9ccd8f62c641e7b2ed2f57291d1"
+dependencies = [
+ "indexmap",
+ "itoa",
+ "ryu",
+ "serde",
+ "unsafe-libyaml",
+]
+
+[[package]]
 name = "sha-1"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -565,6 +578,12 @@ name = "unicode-ident"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "15c61ba63f9235225a22310255a29b806b907c9b8c964bcbd0a2c70f3f2deea7"
+
+[[package]]
+name = "unsafe-libyaml"
+version = "0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c1e5fa573d8ac5f1a856f8d7be41d390ee973daf97c806b2c1a465e4e1406e68"
 
 [[package]]
 name = "uuid"
