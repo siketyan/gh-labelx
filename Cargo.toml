@@ -17,7 +17,7 @@ authors = [
 
 [dependencies]
 anyhow = "1.0"
-clap = { version = "3.2", features = ["derive"] }
+clap = { version = "4.0", features = ["derive"] }
 hcl-rs = "0.8"
 gh-config = "0.2"
 serde = { version = "1.0", features = ["derive"] }
