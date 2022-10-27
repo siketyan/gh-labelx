@@ -193,9 +193,9 @@ checksum = "8a9ee70c43aaf417c914396645a0fa852624801b24ebb7ae78fe8272889ac888"
 
 [[package]]
 name = "hcl-rs"
-version = "0.8.0"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "62a8017f6f7882317cdd665314d0b7f503d10c70dc2f647d1cfd550d4ba1a915"
+checksum = "80ee880494c7bbbe54b1e494cd92600fbd3328edafc17a189f9ff021530070fa"
 dependencies = [
  "indexmap",
  "itoa",
@@ -550,9 +550,9 @@ dependencies = [
 
 [[package]]
 name = "vecmap-rs"
-version = "0.1.5"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b465d414b30a49f468a2937d0891777afad1253e4329a387e0297e312936d468"
+checksum = "337f638efa9152314d8ee4cfdefc65fcb08114ba0d6dcfd774661e0d011ac6c5"
 dependencies = [
  "serde",
 ]
