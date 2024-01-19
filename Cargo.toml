@@ -23,4 +23,4 @@ gh-config = "0.2"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.9"
 tempdir = "0.3"
-uuid = { version = "1.6", features = ["v4"] }
+uuid = { version = "1.7", features = ["v4"] }
