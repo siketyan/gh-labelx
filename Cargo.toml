@@ -22,5 +22,5 @@ hcl-rs = "0.16"
 gh-config = "0.2"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.9"
-tempdir = "0.3"
+tempdir = "0.3.7"
 uuid = { version = "1.8", features = ["v4"] }
