@@ -21,6 +21,6 @@ clap = { version = "4.5.4", features = ["derive"] }
 hcl-rs = "0.16.9"
 gh-config = "0.2"
 serde = { version = "1.0.200", features = ["derive"] }
-serde_yaml = "0.9"
+serde_yaml = "0.9.34"
 tempdir = "0.3.7"
 uuid = { version = "1.8", features = ["v4"] }
